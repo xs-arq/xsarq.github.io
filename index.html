@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>xs_arq | arquitectura • gráfica • BIM</title>
+    <title>XS | arquitectura • gráfica • bim</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Roboto+Mono&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     
@@ -58,6 +58,64 @@
             font-size: 3em;
             margin-bottom: 10px;
         }
+
+        /* --- GRILLA DE PORTAFOLIO --- */
+        .grilla-portafolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .proyecto-card {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        /* Efecto al pasar el mouse (hover) */
+        .proyecto-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .proyecto-img {
+            width: 100%;
+            aspect-ratio: 4/3; /* Mantiene un formato horizontal uniforme */
+            object-fit: cover;
+            background-color: #E5E7EB; /* Gris de fondo mientras carga */
+            margin-bottom: 15px;
+            filter: grayscale(15%); /* Un poco desaturado para mantener tono frío */
+            transition: filter 0.3s ease;
+        }
+
+        .proyecto-card:hover .proyecto-img {
+            filter: grayscale(0%); /* Vuelve al color original al pasar el mouse */
+        }
+
+        .proyecto-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .proyecto-titulo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .proyecto-tags {
+            font-family: 'Roboto Mono', monospace;
+            color: var(--azul-acero);
+            font-size: 0.8em;
+            text-transform: uppercase;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -70,9 +128,36 @@
             <p class="tecnico">[ arquitectura / gráfica / BIM ]</p>
         </div>
 
-        <div style="margin-top: 50px;">
+  <div style="margin-top: 50px; width: 100%;">
             <h2>Portafolio</h2>
-            <p>Aquí irá la grilla con los renders de tus proyectos...</p>
+            
+            <div class="grilla-portafolio">
+                
+                <a href="#" class="proyecto-card">
+                    <img src="https://via.placeholder.com/600x450/e0e0e0/a0a0a0?text=Render+Leon+Prado" alt="Casa León Prado" class="proyecto-img">
+                    <div class="proyecto-info">
+                        <p class="proyecto-tags">[ 2026 / VIVIENDA / 130m2 ]</p>
+                        <p class="proyecto-titulo">CASA LEÓN PRADO</p>
+                    </div>
+                </a>
+
+                <a href="#" class="proyecto-card">
+                    <img src="https://via.placeholder.com/600x450/e0e0e0/a0a0a0?text=Modelo+BIM" alt="Jardín Infantil Villarrica" class="proyecto-img">
+                    <div class="proyecto-info">
+                        <p class="proyecto-tags">[ BIM / COORDINACIÓN / JUNJI ]</p>
+                        <p class="proyecto-titulo">JARDÍN INFANTIL PARQUE VILLARRICA 7</p>
+                    </div>
+                </a>
+
+                <a href="#" class="proyecto-card">
+                    <img src="https://via.placeholder.com/600x450/e0e0e0/a0a0a0?text=Planimetria" alt="Tribunal San Carlos" class="proyecto-img">
+                    <div class="proyecto-info">
+                        <p class="proyecto-tags">[ MODELADO / CAPJ ]</p>
+                        <p class="proyecto-titulo">TRIBUNAL SAN CARLOS</p>
+                    </div>
+                </a>
+
+            </div>
         </div>
         
         <div style="margin-top: 50px; padding-bottom: 100px;">
